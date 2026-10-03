@@ -1,0 +1,32 @@
+name: Deploy Vercel
+
+# Deploy automático de produção na Vercel a cada push na main.
+# Só executa quando os secrets do repositório estiverem configurados:
+#   VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID
+# (Settings → Secrets and variables → Actions)
+#
+# IMPORTANTE: se você importar o repositório pela dashboard da Vercel
+# (integração nativa GitHub ↔ Vercel), o deploy por push já acontece
+# automaticamente e ESTE workflow se torna desnecessário — use um ou outro.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy para produção
+    # só roda quando o token da Vercel estiver configurado
+    if: ${{ secrets.VERCEL_TOKEN != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy Vercel (produção)
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: "--prod"
