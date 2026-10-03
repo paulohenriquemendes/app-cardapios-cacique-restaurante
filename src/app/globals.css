@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #f7f0e3;
+  --brown: #4a2c1a;
+  --gold: #c9a227;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream-100 font-body text-cacique-brown antialiased;
+  background-image: radial-gradient(circle at 20% 10%, rgba(201, 162, 39, 0.05), transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(74, 44, 26, 0.04), transparent 45%);
+}
+
+/* divisória decorativa dourada entre categorias (identidade do cardápio impresso) */
+@layer components {
+  .divider-ornament {
+    @apply flex items-center gap-3;
+  }
+  .divider-ornament::before,
+  .divider-ornament::after {
+    content: "";
+    @apply h-px flex-1;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(201, 162, 39, 0.6),
+      transparent
+    );
+  }
+  .divider-ornament span {
+    @apply text-cacique-gold;
+  }
+}

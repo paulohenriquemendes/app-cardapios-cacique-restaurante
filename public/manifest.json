@@ -1,0 +1,21 @@
+{
+  "name": "Cardápios Cacique Restaurante",
+  "short_name": "Cacique",
+  "description": "Cardápio digital do Restaurante Cacique / Cozinha Regional",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F0E3",
+  "theme_color": "#4A2C1A",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
