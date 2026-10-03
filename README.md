@@ -1,5 +1,7 @@
 # 🍽️ APP CARDAPIOS CACIQUE RESTAURANTE
 
+[![CI](https://github.com/paulohenriquemendes/app-cardapios-cacique-restaurante/actions/workflows/ci.yml/badge.svg)](https://github.com/paulohenriquemendes/app-cardapios-cacique-restaurante/actions/workflows/ci.yml)
+
 Cardápio digital e sistema de pedidos por **QR Code** para o **Restaurante Cacique / Cozinha Regional**.
 
 O cliente escaneia o QR Code da mesa, navega pelo cardápio no celular, personaliza o pedido, confirma — e o pedido aparece **automaticamente** no painel da cozinha, em tempo real.
